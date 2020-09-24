@@ -27,6 +27,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
     }
 
     @Override
+    //Konfiguriert für welche Requests auf welchen URLS man Authentifiziert sein muss
     protected void configure(HttpSecurity http) throws Exception {
         http.cors()
             .and()
@@ -37,6 +38,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
             .authorizeRequests()
             .antMatchers(HttpMethod.POST, "/users/**")
             .permitAll()
+                //Erlaubt zugriff auf die h2 Konsole
             .antMatchers("/h2-console/**")
             .permitAll()
             .anyRequest()
@@ -58,6 +60,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
     CorsConfigurationSource corsConfigurationSource() {
         final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
 
+         //definiert den Header
         String[] headers = {
             "Access-Control-Allow-Headers",
             "Access-Control-Allow-Origin",

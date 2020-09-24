@@ -15,6 +15,7 @@ public class WebConfiguration {
     public WebMvcConfigurer corsConfigurer() {
         return new WebMvcConfigurer() {
             @Override
+            //aktiviert das CORS-Mapping für die Wildcard "/**"
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**");
             }
