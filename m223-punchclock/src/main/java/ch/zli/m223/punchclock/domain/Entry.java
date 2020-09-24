@@ -37,7 +37,7 @@ public class Entry {
     @Column(nullable = false)
     private LocalDateTime checkOut;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     @JoinColumn(
         name = "APPLICATIONUSER_ID")
     @JsonIgnoreProperties(value = "applicationUser")

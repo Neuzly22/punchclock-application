@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $jsondata = json_encode($_POST);
 
 $curl = curl_init();

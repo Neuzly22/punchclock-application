@@ -1,4 +1,6 @@
 input {
     display: block;
 }
-
+.entry-data{
+    display: inline-block;
+}
