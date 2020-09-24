@@ -73,9 +73,9 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
             headers) {
             corsConfiguration.addExposedHeader(header);
         }
-        corsConfiguration.addAllowedMethod("DELETE");
         corsConfiguration.addAllowedMethod("PUT");
         corsConfiguration.addAllowedMethod("OPTIONS");
+        corsConfiguration.addAllowedMethod("DELETE");
 
         source.registerCorsConfiguration("/**", corsConfiguration);
 
